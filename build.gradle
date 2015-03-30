@@ -20,6 +20,10 @@ repositories {
         name "Mobius Repo"
         url "http://mobiusstrip.eu/maven"
     }
+    maven { // the repo from which to get NEI and stuff
+        name "CB Repo"
+        url "http://chickenbones.net/maven/"
+    }
 }
 
 apply plugin: 'forge'
@@ -59,6 +63,9 @@ minecraft {
 
 dependencies {
     //compile "mcp.mobius.waila:Waila:1.6.0_B1_1.8.1"
+    compile "codechicken:CodeChickenCore:${config.minecraft_version}-${config.ccc_version}:dev"
+    compile "codechicken:CodeChickenLib:${config.minecraft_version}-${config.CCLIB_version}:dev"
+    compile "codechicken:NotEnoughItems:${config.minecraft_version}-${config.NEI_version}:dev"
 }
 
 task devJar(type: Jar, dependsOn: 'classes') {
