@@ -36,6 +36,7 @@ public class BlockMachine extends BlockBakeable {
         this.setLightLevel(active ? 1 : 0);
         this.guiID = guiID;
         this.isActive = active;
+
     }
 
     @Override
